@@ -1,14 +1,14 @@
- package com.example.todo.controller;
+package com.example.todo.controller;
 
- import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.web.bind.annotation.*;
- import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.*;
 
 import com.example.todo.model.Todo;
 import com.example.todo.service.TodoH2Service;
 
 @RestController
-public class TodoController{
+public class TodoController {
 
     @Autowired
     private TodoH2Service todoService;
@@ -28,13 +28,13 @@ public class TodoController{
         return todoService.addTodo(todo);
     }
 
-    @PutMapping("/todos{id}")
-    public Todo updateTodo(@PathVariable("id") int id, @requestBody Todo todo) {
+    @PutMapping("/todos/{id}")
+    public Todo updateTodo(@PathVariable("id") int id, @RequestBody Todo todo) {
         return todoService.updateTodo(id, todo);
     }
 
     @DeleteMapping("/todos/{id}")
-    public void delteTodo(@PathVariable int id) {
+    public void deleteTodo(@PathVariable int id) {
         todoService.deleteTodo(id);
     }
 }
