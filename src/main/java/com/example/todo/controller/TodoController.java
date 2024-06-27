@@ -24,7 +24,7 @@ public class TodoController {
     }
 
     @PostMapping("/todos")
-    public Todo addTodo(@requestBody Todo todo) {
+    public Todo addTodo(@RequestBody Todo todo) {
         return todoService.addTodo(todo);
     }
 
