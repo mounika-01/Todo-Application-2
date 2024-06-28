@@ -16,7 +16,7 @@ import com.example.todo.model.TodoRowMapper;
 public class TodoH2Service implements TodoRepository {
 
     @Autowired
-    private Jdbctemplate db;
+    private JdbcTemplate db;
 
     @Override
     public ArrayList<Todo> getTodos() {
